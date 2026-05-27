@@ -10,17 +10,7 @@ import sapien
 from sapien.asset import create_dome_envmap
 from sapien.utils import Viewer
 from pytransform3d import rotations
-# from .optimizer import Optimizer, LPFilter
 
-# from .config import (
-#     OPERATOR2MANO,
-#     RobotName,
-#     RetargetingType,
-#     HandType,
-#     get_default_config_path,
-#     RetargetingConfig,
-# )
-# from .detector.single_hand_detector import SingleHandDetector
 from optimizer import Optimizer, LPFilter
 
 from config import (

@@ -5,12 +5,6 @@ import nlopt
 import numpy as np
 import torch
 
-# from .kinematics.kinematics_adaptor import (
-#     KinematicAdaptor,
-#     MimicJointKinematicAdaptor,
-# )
-# from .kinematics.robot_wrapper import RobotWrapper
-
 from kinematics.kinematics_adaptor import (
     KinematicAdaptor,
     MimicJointKinematicAdaptor,

@@ -80,10 +80,6 @@ class XArm7QB:
                 )
 
             # Setup control thread
-            # self._arm_thread = threading.Thread(target=self._internal_control_arm_qpos)
-            # self._arm_lock = threading.Lock()
-            # self._arm_pos_target = None
-            # self._arm_should_stop = False
             # 获取当前机械臂位置作为初始目标
             current_qpos = self.get_arm_qpos()
             self._arm_pos_target = current_qpos if current_qpos is not None else np.zeros(7)
@@ -375,70 +371,4 @@ if __name__ == "__main__":
         # 停止机械臂控制线程
         robot.stop()
         print("测试结束")
-
-# if __name__ == "__main__":
-#     # Example usage
-#         init_qpos = np.zeros(7+11)
-#         # init_qpos[:7]=[-np.pi/4,-0.32,0.06,1.49,-0.3,0.78,-0.29] # 机械臂初始位置，单位为弧度
-#         init_qpos[:7]=[0,0.21,0,0.9,0,-0.75,0]
-#         real_robot = XArm7QB(
-#             arm_ip_address="192.168.1.204",   # 根据实际修改
-#             hand_port="COM3",                 # 根据实际修改
-#             use_arm=False,
-#             use_hand=True,                    # 如果不需要手部可改为 False
-#             initial_arm_qpos=init_qpos[:7].tolist()
-#         )
-#         real_robot.start()   # 启动机械臂内部控制线程（如果有）
-#         # real_robot.control_hand_qpos([-1.79, 0.29, -1.24, -1.24, -1.24, -1.24])  # 将机械臂和机械手移动到初始位置
-#         real_robot.control_hand_qpos([0, 0, 0, 0, 0, 0])  # 将机械臂和机械手移动到初始位置
-#         # real_robot.control_hand_qpos([-1.2, 0.29, -0.5, 0, -0.8, 0])  # 将机械臂和机械手移动到初始位置
-
-# if __name__ == "__main__":
-#     init_qpos = np.zeros(7+11)
-#     init_qpos[:7] = [0, 0.21, 0, 0.9, 0, -0.75, 0]
-    
-#     print("正在初始化机器人...")
-#     real_robot = XArm7QB(
-#         arm_ip_address="192.168.1.204",
-#         hand_port="COM3",
-#         use_arm=True,
-#         use_hand=False,
-#         initial_arm_qpos=init_qpos[:7].tolist()
-#     )
-    
-#     print("启动控制线程...")
-#     real_robot.start()
-    
-#     # 等待系统稳定
-#     time.sleep(2)
-    
-#     # 打印初始位置
-#     initial_pos = real_robot.get_arm_qpos()
-#     print(f"初始位置: {np.round(initial_pos, 3)}")
-    
-#     # 发送目标位置
-#     target_pos = np.array(init_qpos[:7])
-#     print(f"目标位置: {np.round(target_pos, 3)}")
-#     real_robot.control_arm_qpos(target_pos)
-    
-#     # 监控位置变化
-#     print("开始监控位置变化...")
-#     try:
-#         while True:
-#             current_pos = real_robot.get_arm_qpos()
-#             print(f"当前位置: {np.round(current_pos, 3)}")
-            
-#             # 检查是否到达目标
-#             if np.allclose(current_pos, target_pos, atol=0.01):
-#                 print("已达到目标位置！")
-            
-#             # 检查是否回到零位
-#             if np.allclose(current_pos, np.zeros(7), atol=0.01):
-#                 print("警告：机械臂回到零位！")
-            
-#             time.sleep(1)
-#     except KeyboardInterrupt:
-#         print("\n停止机器人...")
-#         real_robot.stop()
-#         print("机器人已停止")
     

@@ -17,7 +17,6 @@ from coord_converter import SAPIEN2MEDIAPIPE, PLOT2SAPIEN, ROTATE_Z, CUROBO_POSE
 from motion_control import PinRobot, PinRobotController, is_pose_changed
 
 # assembly urdf path
-# arm_path = r"D:\study\VScodes\Retargeting\assets\robots\assembly\xarm7_qb\xarm7_qb_right_hand.urdf"
 arm_path = r"assets/robots/assembly/xarm7_qbr/qbr.urdf"
 mesh_path = r"assets/robots/assembly/xarm7_qbr"
 # robot arm joint names
@@ -130,8 +129,6 @@ def start_retargeting(queue: multiprocessing.Queue, robot_dir: str, config_path:
     # 需要提供URDF文件路径
     loader = scene.create_urdf_loader()
     loader.load_multiple_collisions_from_file = True
-    # urdf_path = r"D:\study\VScodes\Retargeting\assets\robots\assembly\xarm7_qb\xarm7_qb_right_hand.urdf" #"D:\study\VScodes\curobo\src\curobo\content\assets\robot\ur_description\ur5e.urdf"  # 请替换为实际路径
-    # urdf_path = r"D:\study\Grasp\URDF\xarm_qb\xarmqb.urdf"
     urdf_path = arm_path
     loader.scale = 1 # 0.4 # 模型大小
     robot = loader.load(urdf_path)
@@ -321,11 +318,6 @@ def start_retargeting(queue: multiprocessing.Queue, robot_dir: str, config_path:
                     else:
                         wrist_quat = R.from_matrix(R.from_quat(this_quat).as_matrix() @ CUROBO_POSE_FIX @ ROTATE_Y).as_quat()
 
-                # 在 retargeting 循环内，获取 wrist_rot 后立即打印
-                # print("原始 wrist_rot:\n", wrist_rot_o)
-                # print("变换后 wrist_rot:\n", CAMERA2ROBOT @ wrist_rot.T)
-                # print("四元数 (w,x,y,z):", wrist_quat[3], wrist_quat[0], wrist_quat[1], wrist_quat[2])
-
                 # 目标腕部姿态 [x, y, z, qw, qx, qy, qz]
                 wrist_pos_m = wrist_pos @ SAPIEN2MEDIAPIPE + origin_pos
                 goal_pose = [wrist_pos_m[0], wrist_pos_m[1], wrist_pos_m[2], wrist_quat[3], wrist_quat[0], wrist_quat[1], wrist_quat[2]]
@@ -406,50 +398,6 @@ def start_retargeting(queue: multiprocessing.Queue, robot_dir: str, config_path:
         cv2.destroyAllWindows()
         viewer.close()  # 关闭Sapien窗口
         logger.info("🗃️  Viewer & OpenCV windows closed.")
-        # # 保存数据
-        # import pickle
-        # if data_list:
-        #     output_path = f"data/retargeting_data_{time.strftime('%Y%m%d_%H%M%S')}.pkl"
-        #     with open(output_path, 'wb') as f:
-        #         pickle.dump({'metadata': metadata, 'data': data_list}, f)
-        #     logger.info(f"Data saved to {output_path}")
-        # ========== 核心修改：替换pickle为txt写入 ==========
-        if data_list:
-            # 定义txt输出路径
-            output_path = f"data/retargeting_data/retargeting_data_{time.strftime('%Y%m%d_%H%M%S')}.txt"
-            
-            # 打开txt文件并写入
-            with open(output_path, 'w', encoding='utf-8') as f:
-                # 1. 写入元数据
-                f.write("="*50 + " 元数据 " + "="*50 + "\n")
-                for k, v in metadata.items():
-                    if isinstance(v, list):  # 关节名称列表特殊处理（换行）
-                        f.write(f"{k}:\n")
-                        for idx, name in enumerate(v):
-                            f.write(f"  关节{idx+1}: {name}\n")
-                    else:
-                        f.write(f"{k}: {v}\n")
-                f.write("\n" + "="*50 + " 逐帧数据 " + "="*50 + "\n")
-                
-                # 2. 写入逐帧数据
-                for frame_idx, frame_data in enumerate(data_list):
-                    f.write(f"\n--- 第 {frame_idx+1} 帧 ---\n")
-                    for key, value in frame_data.items():
-                        f.write(f"{key}: ")
-                        # 处理numpy数组（格式化输出）
-                        if isinstance(value, np.ndarray):
-                            # 数组转为易读的字符串（保留4位小数，换行）
-                            f.write("\n")
-                            np.savetxt(f, value, fmt="%.4f", delimiter=",")
-                        # 处理None值
-                        elif value is None:
-                            f.write("None (未检测到手部)\n")
-                        # 处理普通数值（如timestamp、qpos）
-                        else:
-                            f.write(f"{value}\n")
-            
-            logger.info(f"💾 数据已保存到TXT文件: {output_path}")
-        # ========== 修改结束 ==========
 
 def produce_frame(queue: multiprocessing.Queue, virtual_video_file: str = ""):
     # 在子进程中创建RealsenseApp实例并连接相机

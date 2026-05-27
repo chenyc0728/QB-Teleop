@@ -16,11 +16,6 @@ if not hasattr(numpy, 'int'):
     numpy.unicode = str
     numpy.str = str
 
-# from .dataset import DexYCBVideoDataset
-# from .config import RobotName, HandType
-# from .config import RetargetingConfig
-# from .viewer import RobotHandDatasetSAPIENViewer, HandDatasetSAPIENViewer
-
 from dataset import DexYCBVideoDataset
 from config import RobotName, HandType
 from config import RetargetingConfig

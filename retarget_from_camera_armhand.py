@@ -28,9 +28,8 @@ from config import (
 from detector.single_hand_detector import SingleHandDetector
 
 # assembly urdf path
-# arm_path = r"D:\study\VScodes\Retargeting\assets\robots\assembly\xarm7_qb\xarm7_qb_right_hand.urdf"
-arm_path = r"D:\study\VScodes\Retargeting\assets\robots\assembly\xarm7_qbr\qbr.urdf"
-mesh_path = r"D:\study\VScodes\Retargeting\assets\robots\assembly\xarm7_qbr"
+arm_path = r"assets\robots\assembly\xarm7_qbr\qbr.urdf"
+mesh_path = r"assets\robots\assembly\xarm7_qbr"
 # robot arm joint names
 arm_joint_names=[
         "joint1","joint2","joint3","joint4","joint5","joint6","joint7"
@@ -77,23 +76,7 @@ def start_retargeting(queue: multiprocessing.Queue, robot_dir: str, config_path:
 
     # Setup 场景与材质
     scene = sapien.Scene()
-    # render_mat = sapien.render.RenderMaterial()
-    # render_mat.base_color = [0.06, 0.08, 0.12, 1]
-    # render_mat.metallic = 0.0
-    # render_mat.roughness = 0.9
-    # render_mat.specular = 0.8
-    # scene.add_ground(0, render_material=render_mat, render_half_size=[1000, 1000])
 
-    # # Lighting 光照
-    # scene.add_directional_light(np.array([1, 1, -1]), np.array([3, 3, 3]))
-    # scene.add_point_light(np.array([2, 2, 2]), np.array([2, 2, 2]), shadow=False)
-    # scene.add_point_light(np.array([2, -2, 2]), np.array([2, 2, 2]), shadow=False)
-    # scene.set_environment_map(
-    #     create_dome_envmap(sky_color=[0.2, 0.2, 0.2], ground_color=[0.2, 0.2, 0.2])
-    # )
-    # scene.add_area_light_for_ray_tracing(
-    #     sapien.Pose([2, 1, 2], [0.707, 0, 0.707, 0]), np.array([1, 1, 1]), 5, 5
-    # )
     # 地面材质：加深加暗，突出白色机器手
     render_mat = sapien.render.RenderMaterial()
     render_mat.base_color = [0.02, 0.03, 0.05, 1]  # 近黑色地面
@@ -103,21 +86,7 @@ def start_retargeting(queue: multiprocessing.Queue, robot_dir: str, config_path:
     scene.add_ground(0, render_material=render_mat, render_half_size=[1000, 1000])
 
     # Lighting 光照
-    # scene.add_directional_light(np.array([1, 1, -1]), np.array([3, 3, 3]))
-    # scene.add_point_light(np.array([2, 2, 2]), np.array([2, 2, 2]), shadow=False)
-    # scene.add_point_light(np.array([2, -2, 2]), np.array([2, 2, 2]), shadow=False)
-    # scene.set_environment_map(
-    #     create_dome_envmap(sky_color=[0.2, 0.2, 0.2], ground_color=[0.2, 0.2, 0.2])
-    # )
-    # scene.add_area_light_for_ray_tracing(
-    #     sapien.Pose([2, 1, 2], [0.707, 0, 0.707, 0]), np.array([1, 1, 1]), 5, 5
-    # )
-
     scene.set_environment_map(r"assets/gray_envmap.hdr")  # 添加环境贴图，提供全局光照和反射信息
-
-    # scene.set_ambient_light([0.2, 0.2, 0.2])
-    # scene.add_directional_light([1, -0.5, -1.5], [0.8, 0.8, 0.8])
-    # scene.add_directional_light([-0.5, 0.5, -1], [0.3, 0.3, 0.3])
 
     # 环境光：轻微提升至 0.1，保持背景干净又不至于死黑
     scene.set_ambient_light([0.10, 0.10, 0.10])
@@ -141,7 +110,6 @@ def start_retargeting(queue: multiprocessing.Queue, robot_dir: str, config_path:
         name="Cheese!", width=600, height=600, fovy=1, near=0.1, far=10
     )
     cam.set_local_pose(sapien.Pose([0.8, -0.4, 0.3], [0, 0, 0, -1])) # 从+x轴观测
-    # cam.set_local_pose(sapien.Pose([0, -1, 0.3], [0.707, 0, 0, 0.707])) # 从-y轴观测
 
     viewer = Viewer()
     viewer.set_scene(scene)
@@ -160,10 +128,7 @@ def start_retargeting(queue: multiprocessing.Queue, robot_dir: str, config_path:
     # 需要提供URDF文件路径
     loader = scene.create_urdf_loader()
     loader.load_multiple_collisions_from_file = True
-    # urdf_path = r"D:\study\VScodes\Retargeting\assets\robots\assembly\xarm7_qb\xarm7_qb_right_hand.urdf" #"D:\study\VScodes\curobo\src\curobo\content\assets\robot\ur_description\ur5e.urdf"  # 请替换为实际路径
-    # urdf_path = r"D:\study\Grasp\URDF\xarm_qb\xarmqb.urdf"
     urdf_path = arm_path
-    # urdf_path = r"D:\study\VScodes\Retargeting\assets\robots\assembly\xarm_qb\xarmqb.urdf"
     loader.scale = 1 # 0.4 # 模型大小
     robot = loader.load(urdf_path)
     # 将机器人整体向左平移 x:前 y:左 z:上
@@ -176,7 +141,6 @@ def start_retargeting(queue: multiprocessing.Queue, robot_dir: str, config_path:
     # 从重定向配置中读取预定义的关节名称列表
     # 需要拼接 arm + hand
     retargeting_joint_names = list(arm_joint_names) + retargeting.joint_names
-    # retargeting_joint_names = retargeting.joint_names
     # 重定向关节索引→Sapien 关节索引映射数组
     retargeting_to_sapien = np.array(
         [retargeting_joint_names.index(name) for name in sapien_joint_names]
@@ -186,7 +150,6 @@ def start_retargeting(queue: multiprocessing.Queue, robot_dir: str, config_path:
     # 初始化机器人位置，使其不至于陷入地面，尽量靠近实际位姿
     # 这里按照Pinocchio模型的关节顺序初始化位置，后续会通过retargeting_to_sapien映射到正确的机械臂和手部关节位置
     init_qpos = np.zeros(robot.dof)
-    # init_qpos[:7]=[-np.pi/4,-0.32,0.06,1.49,-0.3,0.78,-0.29] # 机械臂初始位置，单位为弧度
     init_qpos[:7]=[-np.pi/2,0.21,0,0.9,0,-0.75,0]
     robot.set_qpos(init_qpos[retargeting_to_sapien])
     
@@ -358,11 +321,6 @@ def start_retargeting(queue: multiprocessing.Queue, robot_dir: str, config_path:
                     else:
                         wrist_quat = R.from_matrix(R.from_quat(this_quat).as_matrix() @ CUROBO_POSE_FIX @ ROTATE_Y).as_quat()
 
-                # 在 retargeting 循环内，获取 wrist_rot 后立即打印
-                # print("原始 wrist_rot:\n", wrist_rot_o)
-                # print("变换后 wrist_rot:\n", CAMERA2ROBOT @ wrist_rot.T)
-                # print("四元数 (w,x,y,z):", wrist_quat[3], wrist_quat[0], wrist_quat[1], wrist_quat[2])
-
                 # 目标腕部姿态 [x, y, z, qw, qx, qy, qz]
                 wrist_pos_m = wrist_pos @ SAPIEN2MEDIAPIPE + origin_pos
                 # wrist_pos_m = origin_pos
@@ -444,51 +402,6 @@ def start_retargeting(queue: multiprocessing.Queue, robot_dir: str, config_path:
         cv2.destroyAllWindows()
         viewer.close()  # 关闭Sapien窗口
         logger.info("🗃️  Viewer & OpenCV windows closed.")
-        # # 保存数据
-        # import pickle
-        # if data_list:
-        #     output_path = f"data/retargeting_data_{time.strftime('%Y%m%d_%H%M%S')}.pkl"
-        #     with open(output_path, 'wb') as f:
-        #         pickle.dump({'metadata': metadata, 'data': data_list}, f)
-        #     logger.info(f"Data saved to {output_path}")
-        # ========== 核心修改：替换pickle为txt写入 ==========
-        if data_list:
-            # 定义txt输出路径
-            output_path = f"data/retargeting_data/retargeting_data_{time.strftime('%Y%m%d_%H%M%S')}.txt"
-            
-            # 打开txt文件并写入
-            with open(output_path, 'w', encoding='utf-8') as f:
-                # 1. 写入元数据
-                f.write("="*50 + " 元数据 " + "="*50 + "\n")
-                for k, v in metadata.items():
-                    if isinstance(v, list):  # 关节名称列表特殊处理（换行）
-                        f.write(f"{k}:\n")
-                        for idx, name in enumerate(v):
-                            f.write(f"  关节{idx+1}: {name}\n")
-                    else:
-                        f.write(f"{k}: {v}\n")
-                f.write("\n" + "="*50 + " 逐帧数据 " + "="*50 + "\n")
-                
-                # 2. 写入逐帧数据
-                for frame_idx, frame_data in enumerate(data_list):
-                    f.write(f"\n--- 第 {frame_idx+1} 帧 ---\n")
-                    for key, value in frame_data.items():
-                        f.write(f"{key}: ")
-                        # 处理numpy数组（格式化输出）
-                        if isinstance(value, np.ndarray):
-                            # 数组转为易读的字符串（保留4位小数，换行）
-                            f.write("\n")
-                            np.savetxt(f, value, fmt="%.4f", delimiter=",")
-                        # 处理None值
-                        elif value is None:
-                            f.write("None (未检测到手部)\n")
-                        # 处理普通数值（如timestamp、qpos）
-                        else:
-                            f.write(f"{value}\n")
-            
-            logger.info(f"💾 数据已保存到TXT文件: {output_path}")
-        # ========== 修改结束 ==========
-
 
 
 

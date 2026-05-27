@@ -17,7 +17,6 @@ CAMERA2WORLD = MEDIAPIPE2SAPIEN3
 from motion_control import PinRobot, PinRobotController, is_pose_changed, clamp_rotation
 
 # assembly urdf path
-# arm_path = r"D:\study\VScodes\Retargeting\assets\robots\assembly\xarm7_qb\xarm7_qb_right_hand.urdf"
 arm_path = r"assets/robots/assembly/xarm7_qbr/qbr.urdf"
 mesh_path = r"assets/robots/assembly/xarm7_qbr"
 # robot arm joint names
@@ -474,11 +473,6 @@ def start_retargeting(queue: multiprocessing.Queue, robot_dir: str, config_path:
                 if USING_PRESET_POSES:
                     # wrist_quat = this_quat
                     wrist_quat = R.from_matrix(R.from_quat(this_quat).as_matrix() @ CUROBO_POSE_FIX).as_quat()
-
-                # 在 retargeting 循环内，获取 wrist_rot 后立即打印
-                # print("原始 wrist_rot:\n", wrist_rot_o)
-                # print("变换后 wrist_rot:\n", CAMERA2WORLD @ wrist_rot.T)
-                # print("四元数 (w,x,y,z):", wrist_quat[3], wrist_quat[0], wrist_quat[1], wrist_quat[2])
 
                 if not is_init:
                     init_position = wrist_pos @ CAMERA2WORLD.T

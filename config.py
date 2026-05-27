@@ -8,14 +8,6 @@ import yaml
 import os
 import enum
 
-# from core.URDF_units import yourdfpy as urdf
-# # import yourdfpy as urdf
-# from .kinematics.kinematics_adaptor import MimicJointKinematicAdaptor
-# from .optimizer import LPFilter
-# from .kinematics.robot_wrapper import RobotWrapper
-
-# from core.URDF_units.yourdfpy import DUMMY_JOINT_NAMES
-
 # 修改路径，不作为模块
 import URDF_units.yourdfpy as urdf
 # import yourdfpy as urdf

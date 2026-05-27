@@ -523,35 +523,6 @@ if __name__ == "__main__":
     # Create Actors
     from sapien_demos.create_actors import *
     from sapien_demos.camera import compute_camera_pose
-    # box = create_box(
-    #     scene,
-    #     sapien.Pose(p=[0, -0.65, 0.5 + 0.05]),
-    #     half_size=[0.03, 0.03, 0.03],
-    #     color=[1.0, 0.0, 0.0],
-    #     name="box",
-    # )
-    # sphere = create_sphere(
-    #     scene,
-    #     sapien.Pose(p=[0.2, -0.65, 0.5 + 0.05]),
-    #     radius=0.03,
-    #     color=[0.0, 1.0, 0.0],
-    #     name="sphere",
-    # )
-    # capsule = create_capsule(
-    #     scene,
-    #     sapien.Pose(p=[0.4, -0.65, 0.5 + 0.05]),
-    #     radius=0.03,
-    #     half_length=0.02,
-    #     color=[0.0, 0.0, 1.0],
-    #     name="capsule",
-    # )
-    # table = create_table(
-    #     scene,
-    #     sapien.Pose(p=[0.2, -0.65, 0.0]),
-    #     size=0.6,
-    #     height=0.5,
-    #     thickness=0.08,
-    # )
     # 创建仿真环境中的actor（如桌子、物体等），提供视觉参考和交互对象
     box_half_size = 0.03
     sphere_radius = 0.03
@@ -564,13 +535,6 @@ if __name__ == "__main__":
     object_table_height = 0.1
     object_center = [0.5+0.18, 0, table_height+object_table_height+0.05]
 
-    # object = create_box(
-    #     scene,
-    #     sapien.Pose(p=[table_center[0]-5*sphere_radius, table_center[1], table_height+0.05]),
-    #     half_size=[box_half_size, box_half_size, box_half_size],
-    #     color=[1.0, 0.0, 0.0],
-    #     name="box",
-    # )
     object_table = create_table(
         scene,
         sapien.Pose(p=[object_center[0], object_center[1], table_height+0.05]),
@@ -670,12 +634,6 @@ if __name__ == "__main__":
                         current_key = None
                         pose = arm.get_pose()
                         scene.step()
-                    # elif current_key == "z":
-                    #     saved_camera_pose = cam.get_local_pose()
-                    #     # 打印位置和四元数（可直接复制到 set_camera_pose 中使用）
-                    #     pos = saved_camera_pose.p
-                    #     quat = saved_camera_pose.q
-                    #     print(f"Camera pose saved: Pose(p={list(pos)}, q={list(quat)})")
                     elif current_key == "x":
                         print(arm.links[11].get_pose())
                         current_key = None

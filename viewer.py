@@ -18,22 +18,10 @@ from sapien import internal_renderer as R
 from sapien.asset import create_dome_envmap
 from sapien.utils import Viewer
 
-# from .dataset import YCB_CLASSES
 from dataset import YCB_CLASSES
 
-# from core.URDF_units import yourdfpy as urdf
 from URDF_units import yourdfpy as urdf
 
-# from .config import (
-#     MANO_DIR,
-#     HandType,
-#     RetargetingType,
-#     RobotName,
-#     get_default_config_path,
-#     RetargetingConfig,
-# )
-# from .retarget_from_video import SeqRetargeting
-# from .utils.utils import compute_smooth_shading_normal_np
 from config import (
     MANO_DIR,
     HandType,

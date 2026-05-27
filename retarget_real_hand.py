@@ -11,13 +11,6 @@ from loguru import logger
 from sapien.asset import create_dome_envmap
 from sapien.utils import Viewer
 
-# from .config import (
-#     RobotName,
-#     RetargetingType,
-#     HandType,
-#     get_default_config_path,
-#     RetargetingConfig
-# )
 from config import (
     RobotName,
     RetargetingType,
@@ -128,15 +121,6 @@ def start_retargeting(queue: multiprocessing.Queue, robot_dir: str, config_path:
         robot.set_pose(sapien.Pose([0, 0, -0.13]))
     elif "qb" in robot_name:
         robot.set_pose(sapien.Pose([0, 0, -0.2]))
-
-        # from scipy.spatial.transform import Rotation
-        # # 计算四元数
-        # rot_mat = np.array([[0, 0, 1],
-        #                     [1, 0, 0],
-        #                     [0, 1, 0]])
-        # quat = Rotation.from_matrix(rot_mat).as_quat()  # [x, y, z, w]
-        # # 设置基座位姿
-        # robot.set_pose(sapien.Pose([0, 0, -0.2], quat))
 
     # Different robot loader may have different orders for joints
     # 读取当前加载的机械臂活跃关节名称列表
