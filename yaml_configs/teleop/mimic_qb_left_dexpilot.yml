@@ -1,0 +1,13 @@
+## dexpilot
+retargeting:
+  type: DexPilot
+  urdf_path: mimic_qb/mimic_qb_left.urdf
+
+  # Target refers to the retargeting target, which is the robot hand
+  target_joint_names: ["j1","j2","j4","j6","j8","j10"]
+  wrist_link_name: "wrist"
+  finger_tip_link_names: [ "thumb_tip", "index_tip", "middle_tip", "ring_tip", "pinky_tip" ]
+  scaling_factor: 1.6
+
+  # A smaller alpha means stronger filtering, i.e. more smooth but also larger latency
+  low_pass_alpha: 0.2

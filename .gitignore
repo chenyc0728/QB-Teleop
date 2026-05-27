@@ -1,0 +1,4 @@
+data/**
+hand_detector/extra_data/**
+*.usd
+*.zip

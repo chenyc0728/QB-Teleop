@@ -1,0 +1,844 @@
+{
+  "visuals": [
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\link_base_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "link_base_visual"
+      },
+      "name": "link_base_None",
+      "origin": {
+        "position": [
+          -0.014689999632537365,
+          0.0,
+          0.07739999890327454
+        ],
+        "relative_to": "link_base",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\arm_link1_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "arm_link1_visual"
+      },
+      "name": "arm_link1_None",
+      "origin": {
+        "position": [
+          -5.900000178371556e-05,
+          0.009371999651193619,
+          -0.03195600211620331
+        ],
+        "relative_to": "arm_link1",
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\arm_link2_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "arm_link2_visual"
+      },
+      "name": "arm_link2_None",
+      "origin": {
+        "position": [
+          -7.899999764049426e-05,
+          -0.07220797266386697,
+          0.03838200175663239
+        ],
+        "relative_to": "arm_link2",
+        "rotation": [
+          -1.8852671229514873e-22,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\arm_link3_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "arm_link3_visual"
+      },
+      "name": "arm_link3_None",
+      "origin": {
+        "position": [
+          0.02621999941766262,
+          0.0009479999841440613,
+          -0.02916699664249267
+        ],
+        "relative_to": "arm_link3",
+        "rotation": [
+          2.414595945798407e-24,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\arm_link4_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "arm_link4_visual"
+      },
+      "name": "arm_link4_None",
+      "origin": {
+        "position": [
+          0.03876499459147453,
+          -0.063231999583998,
+          0.03220700410563214
+        ],
+        "relative_to": "arm_link4",
+        "rotation": [
+          1.0105371304753579e-22,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\arm_link5_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "arm_link5_visual"
+      },
+      "name": "arm_link5_None",
+      "origin": {
+        "position": [
+          2.0995736122131348e-05,
+          0.021939996312175712,
+          -0.06775196052431176
+        ],
+        "relative_to": "arm_link5",
+        "rotation": [
+          4.547473507764101e-13,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\arm_link6_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "arm_link6_visual"
+      },
+      "name": "arm_link6_None",
+      "origin": {
+        "position": [
+          0.03799903392791748,
+          0.015507991986058067,
+          0.010203996512727066
+        ],
+        "relative_to": "arm_link6",
+        "rotation": [
+          -9.09494701580508e-13,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\arm_link7_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "arm_link7_visual"
+      },
+      "name": "arm_link7_None",
+      "origin": {
+        "position": [
+          0.0,
+          -0.007124997754097436,
+          -0.01399999698702828
+        ],
+        "relative_to": "arm_link7",
+        "rotation": [
+          3.522624672126557e-22,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\flange_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "flange_visual"
+      },
+      "name": "flange_None",
+      "origin": {
+        "position": [
+          0.01926131546497345,
+          2.7994462702788238e-05,
+          0.011330068093843834
+        ],
+        "relative_to": "flange",
+        "rotation": [
+          -3.890371683736909e-24,
+          0.0,
+          0.0
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\base_link_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "base_link_visual"
+      },
+      "name": "base_link_None",
+      "origin": {
+        "position": [
+          -0.002912999266676435,
+          0.07191099348804725,
+          -2.8005890546606294e-05
+        ],
+        "relative_to": "base_link",
+        "rotation": [
+          -2.842170943133555e-14,
+          0.0,
+          1.415139149917985e-20
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\link1_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "link1_visual"
+      },
+      "name": "link1_None",
+      "origin": {
+        "position": [
+          0.012792993267039154,
+          -0.008372990024105548,
+          0.002415998870213959
+        ],
+        "relative_to": "link1",
+        "rotation": [
+          -2.2918153777484865e-14,
+          -5.417888360170764e-14,
+          -7.422228409456134e-09
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\link2_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "link2_visual"
+      },
+      "name": "link2_None",
+      "origin": {
+        "position": [
+          -3.6711473472283984e-08,
+          0.019363985730162625,
+          -0.0136769911222115
+        ],
+        "relative_to": "link2",
+        "rotation": [
+          -2.2730694190425593e-10,
+          -4.008349208106665e-12,
+          -9.444217651830334e-10
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\link3_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "link3_visual"
+      },
+      "name": "link3_None",
+      "origin": {
+        "position": [
+          -0.005549032945446591,
+          0.0036059988036670687,
+          -0.014432999151757109
+        ],
+        "relative_to": "link3",
+        "rotation": [
+          1.019286400988421e-10,
+          1.920907877206446e-12,
+          -9.241411261497383e-10
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\link10_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "link10_visual"
+      },
+      "name": "link10_None",
+      "origin": {
+        "position": [
+          -0.003657000311885518,
+          0.016243995339268756,
+          0.0018839918424255753
+        ],
+        "relative_to": "link10",
+        "rotation": [
+          -8.526511409725378e-14,
+          0.0,
+          2.842175197559177e-14
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\link11_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "link11_visual"
+      },
+      "name": "link11_None",
+      "origin": {
+        "position": [
+          -0.004504999256634612,
+          0.02364999013234221,
+          0.009124990542397737
+        ],
+        "relative_to": "link11",
+        "rotation": [
+          -8.526512831856427e-14,
+          0.0,
+          4.2483978817431165e-20
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\link4_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "link4_visual"
+      },
+      "name": "link4_None",
+      "origin": {
+        "position": [
+          -0.0036570077624661183,
+          0.01624399533927209,
+          0.0018839918424330415
+        ],
+        "relative_to": "link4",
+        "rotation": [
+          -8.526511409725378e-14,
+          0.0,
+          2.842175197559177e-14
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\link5_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "link5_visual"
+      },
+      "name": "link5_None",
+      "origin": {
+        "position": [
+          -0.004505004844577169,
+          0.02364997523118368,
+          0.009124990542399097
+        ],
+        "relative_to": "link5",
+        "rotation": [
+          -8.526512831856427e-14,
+          0.0,
+          4.2483978817431165e-20
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\link6_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "link6_visual"
+      },
+      "name": "link6_None",
+      "origin": {
+        "position": [
+          -0.003656996586598552,
+          0.016243987888686494,
+          0.0018839918424197466
+        ],
+        "relative_to": "link6",
+        "rotation": [
+          -8.526511409725378e-14,
+          0.0,
+          2.842175197559177e-14
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\link7_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "link7_visual"
+      },
+      "name": "link7_None",
+      "origin": {
+        "position": [
+          -0.003661996817480452,
+          0.025957002461443474,
+          0.008934002169456168
+        ],
+        "relative_to": "link7",
+        "rotation": [
+          -8.526512831856427e-14,
+          0.0,
+          4.2483978817431165e-20
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\link8_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "link8_visual"
+      },
+      "name": "link8_None",
+      "origin": {
+        "position": [
+          -0.003656998449240372,
+          0.016243995339267927,
+          0.0018839918424237156
+        ],
+        "relative_to": "link8",
+        "rotation": [
+          -8.526511409725378e-14,
+          0.0,
+          2.842175197559177e-14
+        ]
+      },
+      "original_name": "None"
+    },
+    {
+      "geometry": {
+        "exported": {
+          "stl": {
+            "export_operation": "blender_export",
+            "filepath": "..\\meshes\\link9_visual.stl",
+            "operations": [
+              "_initiated_in_blender"
+            ]
+          }
+        },
+        "geometry_type": "mesh",
+        "imported": "input file not known",
+        "mesh_orientation": {
+          "forward": "Y",
+          "up": "Z"
+        },
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unique_name": "link9_visual"
+      },
+      "name": "link9_None",
+      "origin": {
+        "position": [
+          -0.003661998680129154,
+          0.025956995010863765,
+          0.008934002169455918
+        ],
+        "relative_to": "link9",
+        "rotation": [
+          -8.526512831856427e-14,
+          0.0,
+          4.2483978817431165e-20
+        ]
+      },
+      "original_name": "None"
+    }
+  ]
+}

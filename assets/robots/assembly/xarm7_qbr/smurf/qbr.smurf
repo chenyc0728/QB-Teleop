@@ -1,0 +1,14 @@
+{
+  "additional_files": {},
+  "description": "",
+  "files": [
+    "..\\urdf\\qbr.urdf",
+    "qbr_collisions.yml",
+    "qbr_joints.yml",
+    "qbr_links.yml",
+    "qbr_materials.yml",
+    "qbr_visuals.yml"
+  ],
+  "modelname": "qbr",
+  "version": "0.0.0"
+}
